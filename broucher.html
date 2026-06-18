@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Smart Automation Brochure</title>
+    <style>
+        :root {
+            --pump-blue: #1b365d;
+            --valve-green: #2e6f40;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+            --accent-red: #d9534f;
+            --accent-green: #5cb85c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #e9ecef;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .brochure-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Page Layout Styling */
+        .page {
+            background: #ffffff;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Header Brands */
+        .header-band {
+            padding: 40px 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .pump-theme .header-band {
+            background-color: var(--pump-blue);
+        }
+
+        .valve-theme .header-band {
+            background-color: var(--valve-green);
+        }
+
+        .header-band uppercase {
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .header-band h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .header-band h3 {
+            font-weight: 400;
+            opacity: 0.9;
+            font-size: 1.2rem;
+        }
+
+        /* Main Grid Work */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section Styling */
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .pump-theme h2 { color: var(--pump-blue); border-bottom: 3px solid var(--pump-blue); }
+        .valve-theme h2 { color: var(--valve-green); border-bottom: 3px solid var(--valve-green); }
+
+        h3 {
+            margin: 15px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .problem-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+
+        .feature-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Solution Columns & Highlight Boxes */
+        .solution-box {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 6px;
+            border-left: 5px solid;
+        }
+
+        .pump-theme .solution-box { border-left-color: var(--pump-blue); }
+        .valve-theme .solution-box { border-left-color: var(--valve-green); }
+
+        /* Media/Picture Placeholders */
+        .image-placeholder {
+            background: #e2e8f0;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 600;
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Full Width Content Panels */
+        .full-width-section {
+            background: #f1f5f9;
+            padding: 30px;
+            margin: 0 30px 40px 30px;
+            border-radius: 6px;
+        }
+
+        .roi-box {
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        /* Crop & Grid layout tables */
+        .crop-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+        }
+
+        .crop-table th, .crop-table td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .valve-theme .crop-table th {
+            background-color: var(--valve-green);
+            color: white;
+        }
+
+        /* Footer / CTA Banner */
+        .footer-banner {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+            border-top: 4px solid #000;
+        }
+
+        .footer-banner h2 {
+            color: #fff !important;
+            border: none !important;
+            margin-bottom: 10px;
+        }
+
+        .cta-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .cta-item {
+            font-size: 1.1rem;
+        }
+
+        .cta-item a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="brochure-container">
+
+    <div class="page pump-theme">
+        <div class="header-band">
+            <uppercase>Agri-Smart Automation Series</uppercase>
+            <h1>Control Your Farm Water Pump From Anywhere</h1>
+            <h3>Save water, save electricity, and eliminate unnecessary trips to the field.</h3>
+        </div>
+
+        <div class="content-grid">
+            <div>
+                <h2>The Daily Challenges You Face</h2>
+                <p style="margin-bottom: 15px; font-weight: 500;">Traditional farming wastes hours of labor and thousands of rupees on pump management. Are you still dealing with these risks?</p>
+                <ul class="problem-list">
+                    <li><strong>Traveling to the farm</strong> just to switch the pump ON/OFF</li>
+                    <li><strong>Dry running</strong> damages the expensive motor</li>
+                    <li><strong>Water tank overflow</strong> and resource leakage</li>
+                    <li><strong>Power supply uncertainty</strong> and erratic schedules</li>
+                    <li><strong>Wasted electricity</strong> and ballooning bills</li>
+                </ul>
+
+                <div class="image-placeholder" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Farmer_Managing_Field_Water_Pump.png'); color: white;">
+                    
+                </div>
+            </div>
+
+            <div>
+                <div class="solution-box">
+                    <h2>Our Solution: Smart Wireless Pump Controller</h2>
+                    <p>Take complete control of your agricultural pump remotely using your mobile phone or a long-range wireless remote. No more walking in the dark or mud.</p>
+                    
+                    <h3>⚙️ High-Performance Features</h3>
+                    <ul class="feature-list">
+                        <li><strong>Start/Stop Pump Remotely</strong> via Call/SMS/App</li>
+                        <li><strong>Mobile App Control</strong> with intuitive UI</li>
+                        <li><strong>Dry Run & Overload Protection</strong></li>
+                        <li><strong>Tank Full Auto Stop</strong> feature</li>
+                        <li><strong>Real-Time Pump Status</strong> & Power Alerts</li>
+                        <li><strong>GSM / LoRa / WiFi Options</strong> available</li>
+                    </ul>
+                </div>
+
+                <div class="image-placeholder" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('Smart_Pump_Controller_Hardware.png'); color: white; margin-top: 30px;">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <h2>Where It Works Best & ROI</h2>
+            <p><strong>Suitable For:</strong> Borewell Pumps, Open Well Pumps, Drip Irrigation, Sprinkler Systems, Farm Water Tanks, and Dairy Farms.</p>
+            
+            <div class="roi-box">
+                <h3 style="margin-top: 0; color: var(--pump-blue);">💰 Your Return on Investment (ROI)</h3>
+                <p>If a farmer makes only <strong>2 unnecessary trips per week</strong> to the field:</p>
+                <p style="margin: 5px 0;">✔️ Fuel Cost Saved | ✔️ Time Saved | ✔️ Reduced Motor Maintenance</p>
+                <p><strong>Typical payback period: 3–8 months</strong></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page valve-theme">
+        <div class="header-band">
+            <uppercase>Agri-Smart Automation Series</uppercase>
+            <h1>Automate Irrigation Without Visiting Every Field</h1>
+            <h3>Control irrigation zones remotely and maximize your crop output.</h3>
+        </div>
+
+        <div class="content-grid">
+            <div>
+                <h2>Tired of Manually Turning Valves?</h2>
+                <ul class="problem-list">
+                    <li><strong>Manually opening heavy valves</strong> in rough weather</li>
+                    <li><strong>Uneven irrigation</strong> harming overall crop health</li>
+                    <li><strong>Water wastage</strong> from overflooding</li>
+                    <li><strong>Heavy labor dependency</strong> and increasing wages</li>
+                    <li><strong>Missed irrigation schedules</strong> affecting crop growth</li>
+                </ul>
+
+                <div class="image-placeholder" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80&w=600'); color: white;">
+                    [ Image: Drip Irrigation / Automatic Valves in Action ]
+                </div>
+            </div>
+
+            <div>
+                <div class="solution-box">
+                    <h2>Solution: Wireless Irrigation Valve Controller</h2>
+                    <p>Divide your land into smart watering sectors. Switch irrigation networks dynamically straight from your smartphone application.</p>
+                    
+                    <h3>🌱 Engineered Features</h3>
+                    <ul class="feature-list">
+                        <li><strong>Remote Valve ON/OFF</strong> execution</li>
+                        <li><strong>Multi-Zone Automation Scaling</strong></li>
+                        <li><strong>Intelligent Irrigation Scheduling</strong></li>
+                        <li><strong>Solar Powered Options</strong> for zero downtime</li>
+                        <li><strong>GSM / LoRa Connectivity</strong> built-in</li>
+                        <li><strong>IP65 Weatherproof Enclosure</strong></li>
+                    </ul>
+                </div>
+
+                <div class="roi-box" style="margin-top: 25px; border-left: 5px solid var(--valve-green);">
+                    <h3 style="margin-top: 0; color: var(--valve-green);">📈 Field-Proven Benefits</h3>
+                    <p>💧 <strong>Up to 30% Water Savings</strong> by targeting root zones.</p>
+                    <p>💰 <strong>Reduced Labor Costs</strong> via simple system automation.</p>
+                    <p>🌱 <strong>Better Uniform Crop Growth</strong> translates to higher yields.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-section">
+            <h2>Optimized For Yield Boost In Key Crops</h2>
+            <table class="crop-table">
+                <thead>
+                    <tr>
+                        <th>Crop Class</th>
+                        <th>Application Utility</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cotton & Wheat</strong></td>
+                        <td>Handles large field zones evenly without manual pipeline shifts.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Groundnut & Vegetables</strong></td>
+                        <td>Enables frequent, precisely metered low-volume watering cycles.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Orchards & Greenhouses</strong></td>
+                        <td>Manages precise drip timing schedules required for high-value plants.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="page" style="margin-bottom: 0;">
+        <div class="footer-banner">
+            <h2>Ready to Transform Your Farmland?</h2>
+            <p>Get in touch with us for a custom configuration layout or request a live working demonstration.</p>
+            <div class="cta-links">
+                <div class="cta-item">📞 Call for Live Demo: <strong>+9199099 97970</strong></div>
+                <div class="cta-item">📱 WhatsApp: <a href="#">+9193270 20240</a></div>
+                <div class="cta-item">🌐 Web: <a href="#" onclick="alert('Connect your actual URL here!'); return false;">https://www.indiamart.com/dynamic-technology-gujarat/wireless-products.html</a></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Simple dynamic interaction example
+    document.querySelectorAll('.image-placeholder').forEach(box => {
+        box.addEventListener('click', () => {
+            alert("Brochure System Asset: Swap the CSS background-image URL configuration inline to update your production images easily!");
+        });
+    });
+</script>
+</body>
+</html>
